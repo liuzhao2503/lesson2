@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>字强不息</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/weui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/searchResult.css" />
+		<link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+		<!-- 引入 WeUI -->
+		<!--<link rel="stylesheet" href="http://res.wx.qq.com/open/libs/weui/0.4.0/weui.min.css">-->
+	</head>
+
+	<body>
+
+		<div class="indexContainer">
+			<div class="name-search">
+				名称搜索
+			</div>
+
+			<input type="text" placeholder="请输入位置名称" />
+
+			<div class="search-range">搜索范围</div>
+			<div class="selectPlace" data-toggle="distpicker">
+				<span>省</span>
+				<select id="indexProvince" class="indexProvince weui-select" data-province="请选择省" name="provinceName"></select>
+				<select id="indexCity" class="indexProvince indexSelCity weui-select" data-city="请选择市" name="cityName"></select>
+				<span class="indexCity">市</span>
+			</div>
+
+		<!-- 使用 WeUI -->
+			<a href="javascript:;" id="indexSearch" class="  indexSearch">搜索</a>
+		</div>
+		<div class="indexMapSearch">搜索结果</div>
+		<div class="itemGroup" id="item_group">
+			<div class="item ">
+				<div class="itemTitle">某机构名称11  <i class="iconfont icon-jiantou2"></i></div>
+				<div class="itemSon ">
+					<div class="itemAddress"><span class="itemSonLeft">地址</span><span class="itemSonRight">11石家庄市</span></div>
+					<div class="itemAddress"><span class="itemSonLeft">电话</span><span class="itemSonRight"> 0311-8569456</span></div>
+				</div>
+			</div>
+			
+			<div class="item ">
+				<div class="itemTitle">某某名称22  <i  class="iconfont icon-jiantou2"></i></div>
+				<div class="itemSon">
+					<div class="itemAddress"><span class="itemSonLeft">地址</span><span class="itemSonRight">22石家庄市桥西</span></div>
+					<div class="itemAddress"><span class="itemSonLeft">电话</span><span class="itemSonRight"> 0311-8569456</span></div>
+				</div>
+			</div>
+			
+			<div class="item ">
+				<div class="itemTitle">某某某机构名称333  <i  class="iconfont icon-jiantou2"></i></div>
+				<div class="itemSon">
+					<div class="itemAddress"><span class="itemSonLeft">地址</span><span class="itemSonRight">333被交就看见</span></div>
+					<div class="itemAddress"><span class="itemSonLeft">电话</span><span class="itemSonRight"> 0311-8569456</span></div>
+				</div>
+			</div>
+			
+			<div class="item ">
+				<div class="itemTitle">某4444  <i  class="iconfont icon-jiantou2"></i></div>
+				<div class="itemSon">
+					<div class="itemAddress"><span class="itemSonLeft">地址</span><span class="itemSonRight">444北京市朝阳区</span></div>
+					<div class="itemAddress"><span class="itemSonLeft">电话</span><span class="itemSonRight"> 010-8569456</span></div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/distpicker.js"></script>
+		<script>
+			//点击搜索按钮  显示搜索结果
+			$('#indexSearch').on('click',function(){
+				$('#item_group').css({
+					"display":'block'
+				})
+			})
+			
+			//显示 或隐藏  具体结果按钮
+			$('#item_group .itemTitle').on('click',function(){
+				//移除所有选中状态
+				$('#item_group .itemTitle').removeClass('itemSelected');
+				$('#item_group .itemTitle').find('i').removeClass('icon-arw-top');
+				$('#item_group .itemTitle').find('i').addClass('icon-jiantou2');
+				
+				//当前  增加选中状态  并将字体设为 白色
+				$(this).addClass('itemSelected');
+				
+				//所有itemson隐藏
+				$('#item_group .itemSon').removeClass('showitemson');
+				
+				//其他字体改为黑色
+				$('#item_group .itemTitle').css({
+					'color':'#000'
+				});
+				//当前字体为白色
+				$(this).css({
+					'color':'#fff'
+				});
+				
+				if($(this).find('i').hasClass('icon-jiantou2')){
+					//显示当前的itemson
+					$(this).next().addClass('showitemson');
+					//上箭头
+					$(this).find('i').addClass('icon-arw-top');
+					//下箭头
+					$(this).find('i').removeClass('icon-jiantou2');
+					
+					
+				}else{
+					$(this).find('i').removeClass('icon-arw-top');
+					$(this).find('i').addClass('icon-jiantou2');
+					$(this).css({
+						'color':'#000'
+					})
+					//移除所有选中状态
+					$(this).removeClass('itemSelected');
+				}
+			})
+		</script>
+	</body>
+
+</html>

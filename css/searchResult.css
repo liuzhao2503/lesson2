@@ -1,0 +1,151 @@
+html,body{
+	
+	background-color: #fff;
+	box-sizing: border-box;
+}
+.indexContainer{
+	
+	padding:0 20px;
+	background-color: #fff;
+	font-family: "微软雅黑";
+	box-sizing: border-box;
+}
+.name-search{
+	height: 42px;
+	line-height: 42px;
+	font-size: 14px;
+}
+ .indexContainer input{
+	width:100%;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 22px;
+	outline: none;
+	border: none;
+	font-size: 14px;
+	background-color: #fafafa;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+.indexContainer input::-webkit-input-placeholder{
+	color: #b0b0b0;
+}
+.indexContainer input::-moz-placeholder {
+	color: #b0b0b0;
+}
+.indexContainer input::-ms-input-placeholder{
+	color: #b0b0b0;
+}
+
+
+.search-range{
+	height: 42px;
+	line-height: 42px;
+	font-size: 14px;
+}
+.selectPlace{
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+}
+
+.selectPlace span{
+	font-size: 14px;
+	margin-right: 10px;
+	float:left;
+}
+.selectPlace .indexProvince{
+	float:left;
+	width:130px;
+	height: 29px;
+	line-height: 29px;
+	border:1px solid #999;
+	/*text-align: center;*/
+	padding-left: 27px;
+	vertical-align: middle;
+	background-color: #fafafa;
+}
+.selectPlace .indexSelCity{
+	float:right;
+}
+.selectPlace .indexCity{
+	/*margin-left: 30px;*/
+	float:right;
+}
+.indexSearch{
+	display: inline-block;
+	/*width: 324px;*/
+	width:97%;
+	height: 35px;
+	line-height: 35px;
+	background-color: #7cbbe6;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #fff;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	margin-top: 25px;
+	margin-left: 8px;
+	cursor: pointer;
+	text-align: center;
+	margin-right: 25px;
+}
+
+.indexMapSearch{
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	background-color: #f4f4f4;
+	font-size: 14px;
+}
+.itemGroup{
+	box-sizing: border-box;
+	display: none;
+}
+.itemGroup .item{
+	box-sizing: border-box;
+}
+.itemSelected{
+	background-color: #7cbbe5;
+}
+
+.itemGroup .item .itemTitle{
+	height: 48px;
+	line-height: 48px;
+	padding:0 12px;
+	font-size: 14px;
+	box-sizing: border-box;
+	/*background-color: #f7f2e8;*/
+}
+.itemGroup .item .itemTitle i{
+	float: right;
+	font-size: 14px;
+}
+.itemGroup  .itemSon{
+	height: 98px;
+	box-sizing: border-box;
+	display: none;
+}
+.itemGroup .item  .showitemson{
+	display:block;
+}
+.itemGroup .item .itemSon .itemAddress{
+	height: 49px;
+	line-height: 49px;
+	border-bottom: 1px solid #fff;
+	padding-left: 12px;
+	font-size: 14px;
+	background-color: #ececec;
+}
+.itemGroup .item .itemSon .itemSonLeft{
+	margin-right: 18px;
+}
+
+@media only screen and (max-width:320px)  {
+	.indexSearch {
+		width: 268px;
+	}
+	.selectPlace .indexProvince{
+		width:112px;
+	}
+}
